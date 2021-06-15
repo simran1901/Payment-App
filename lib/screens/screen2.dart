@@ -26,7 +26,6 @@ class Screen2 extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              // mainAxisSize: MainAxisSize.min,
               children: [
                 ListTile(
                   title: Text(
@@ -137,7 +136,7 @@ class Screen2 extends StatelessWidget {
                             style: TextStyle(color: Colors.grey)),
                       ),
                       ListView.builder(
-                          // physics: NeverScrollableScrollPhysics(),
+                          physics: NeverScrollableScrollPhysics(),
                           itemCount: 1,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {

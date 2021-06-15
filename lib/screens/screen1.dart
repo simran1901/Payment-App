@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:fl_chart/fl_chart.dart';
-import 'package:payments_app/screens/screen3.dart';
 
+import './screen3.dart';
 import '../providers/friends.dart';
 import './screen2.dart';
 
@@ -48,7 +48,6 @@ class _Screen1State extends State<Screen1> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ListTile(
-                  // tileColor: Theme.of(context).primaryColor,
                   title: Text(
                     'Jay Sethi',
                     style: TextStyle(
@@ -82,8 +81,6 @@ class _Screen1State extends State<Screen1> {
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                       maxCrossAxisExtent: MediaQuery.of(context).size.width / 5,
                       childAspectRatio: 1 / 1.2,
-                      // crossAxisSpacing: 8,
-                      // mainAxisSpacing: 8,
                     ),
                     itemCount: _expanded ? frequentList.length : 5,
                     itemBuilder: (BuildContext ctx, index) {
@@ -145,8 +142,6 @@ class _Screen1State extends State<Screen1> {
                         maxCrossAxisExtent:
                             MediaQuery.of(context).size.width / 5,
                         childAspectRatio: 1 / 1.2,
-                        // crossAxisSpacing: 8,
-                        // mainAxisSpacing: 8,
                       ),
                       itemCount: recentList.length,
                       itemBuilder: (BuildContext ctx, index) {
@@ -156,7 +151,6 @@ class _Screen1State extends State<Screen1> {
                 if (!_expanded)
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    // height: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius:
                           BorderRadius.only(topRight: Radius.circular(20)),
@@ -187,7 +181,6 @@ class _Screen1State extends State<Screen1> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                // height: 50,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
@@ -325,7 +318,6 @@ class _RRCardState extends State<RRCard> {
           children: [
             Padding(
               padding: const EdgeInsets.only(
-                // left: 15,
                 right: 15,
                 top: 20,
                 bottom: 15,
@@ -372,8 +364,8 @@ class _RRCardState extends State<RRCard> {
                     children: [
                       Text(_return ? 'RETURNED' : 'RECEIVED',
                           style: TextStyle(color: Colors.grey)),
+                      SizedBox(height: 10),
                       Row(
-                        // crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
@@ -396,14 +388,12 @@ class _RRCardState extends State<RRCard> {
                         _return ? '  of \u{20B9}42,812' : '  of \u{20B9}30,475',
                         style: TextStyle(
                           color: Colors.grey[600],
-                          // fontWeight: FontWeight.bold,
-                          // fontSize: 30,
                         ),
                       ),
                       SizedBox(height: 30),
                       Text('UPCOMING', style: TextStyle(color: Colors.grey)),
+                      SizedBox(height: 10),
                       Row(
-                        // crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
@@ -426,8 +416,6 @@ class _RRCardState extends State<RRCard> {
                         _return ? '  of \u{20B9}42,812' : '  of \u{20B9}30,475',
                         style: TextStyle(
                           color: Colors.grey[600],
-                          // fontWeight: FontWeight.bold,
-                          // fontSize: 30,
                         ),
                       ),
                       SizedBox(height: 30),
@@ -515,7 +503,6 @@ class _RRCardState extends State<RRCard> {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 30),
                             ),
-                            // SizedBox(width: 5),
                             Text(
                               '%',
                               style: TextStyle(
