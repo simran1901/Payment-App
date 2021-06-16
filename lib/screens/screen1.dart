@@ -304,6 +304,11 @@ class RRCard extends StatefulWidget {
 class _RRCardState extends State<RRCard> {
   bool _return = true;
   bool _friends = false;
+  double _sigmaX = 0.5;
+  double _sigmaY = 0.5;
+  double _opacity = 0.01;
+  double _pieinner = 56.46;
+  double _pieouter = 10.54;
 
   @override
   Widget build(BuildContext context) {
@@ -431,26 +436,26 @@ class _RRCardState extends State<RRCard> {
                       PieChart(
                         PieChartData(
                           startDegreeOffset: -90,
-                          centerSpaceRadius: 56.46,
+                          centerSpaceRadius: _pieinner,
                           centerSpaceColor: Colors.transparent,
                           borderData: FlBorderData(show: false),
                           sections: [
                             PieChartSectionData(
                               showTitle: false,
-                              radius: 10.54,
+                              radius: _pieouter,
                               value: _return ? 93 : 89,
                               color: Colors.green,
                             ),
                             PieChartSectionData(
                               showTitle: false,
-                              radius: 10.54,
+                              radius: _pieouter,
                               value: _return ? 5 : 11,
                               color: Colors.red[300],
                             ),
                             if (_return)
                               PieChartSectionData(
                                 showTitle: false,
-                                radius: 10.54,
+                                radius: _pieouter,
                                 value: 2,
                                 color: Colors.red,
                               ),
@@ -474,7 +479,7 @@ class _RRCardState extends State<RRCard> {
                                   style: TextStyle(color: Colors.grey)),
                             ],
                           ),
-                          radius: 50,
+                          radius: _pieinner,
                         ),
                       ),
                     ],
@@ -579,9 +584,11 @@ class _RRCardState extends State<RRCard> {
                           radius: 12.66,
                           backgroundImage: AssetImage(friendList[3].image),
                           child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
+                            filter: ImageFilter.blur(
+                                sigmaX: _sigmaX, sigmaY: _sigmaY),
                             child: CircleAvatar(
-                              backgroundColor: Colors.grey.withOpacity(0.01),
+                              backgroundColor:
+                                  Colors.grey.withOpacity(_opacity),
                             ),
                           ),
                         ),
@@ -595,7 +602,7 @@ class _RRCardState extends State<RRCard> {
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
                           child: CircleAvatar(
-                            backgroundColor: Colors.grey.withOpacity(0.01),
+                            backgroundColor: Colors.grey.withOpacity(_opacity),
                           ),
                         ),
                       ),
@@ -608,7 +615,7 @@ class _RRCardState extends State<RRCard> {
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
                           child: CircleAvatar(
-                            backgroundColor: Colors.grey.withOpacity(0.01),
+                            backgroundColor: Colors.grey.withOpacity(_opacity),
                           ),
                         ),
                       ),
@@ -621,7 +628,7 @@ class _RRCardState extends State<RRCard> {
                         child: BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
                           child: CircleAvatar(
-                            backgroundColor: Colors.grey.withOpacity(0.01),
+                            backgroundColor: Colors.grey.withOpacity(_opacity),
                           ),
                         ),
                       ),
