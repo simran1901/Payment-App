@@ -9,6 +9,7 @@ class Screen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size _size = MediaQuery.of(context).size;
     final fr = ModalRoute.of(context)!.settings.arguments as Friend;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
@@ -103,8 +104,8 @@ class Screen2 extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
                 Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 500,
+                  width: _size.width,
+                  height: _size.height,
                   decoration: BoxDecoration(
                     borderRadius:
                         BorderRadius.only(topRight: Radius.circular(20)),

@@ -20,6 +20,7 @@ class _Screen1State extends State<Screen1> {
   bool _expanded = false;
   @override
   Widget build(BuildContext context) {
+    final Size _size = MediaQuery.of(context).size;
     final frnd = Friends();
     final frequentList = frnd.frequent;
     final recentList = frnd.recent;
@@ -79,7 +80,7 @@ class _Screen1State extends State<Screen1> {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: MediaQuery.of(context).size.width / 5,
+                      maxCrossAxisExtent: _size.width / 5,
                       childAspectRatio: 1 / 1.2,
                     ),
                     itemCount: _expanded ? frequentList.length : 5,
@@ -140,7 +141,7 @@ class _Screen1State extends State<Screen1> {
                       physics: NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                         maxCrossAxisExtent:
-                            MediaQuery.of(context).size.width / 5,
+                            _size.width / 5,
                         childAspectRatio: 1 / 1.2,
                       ),
                       itemCount: recentList.length,
@@ -150,7 +151,7 @@ class _Screen1State extends State<Screen1> {
                 _expanded ? ListTile() : SizedBox(height: 20),
                 if (!_expanded)
                   Container(
-                    width: MediaQuery.of(context).size.width,
+                    width: _size.width,
                     decoration: BoxDecoration(
                       borderRadius:
                           BorderRadius.only(topRight: Radius.circular(20)),
@@ -180,7 +181,7 @@ class _Screen1State extends State<Screen1> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                width: MediaQuery.of(context).size.width,
+                width: _size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
